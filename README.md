@@ -10,6 +10,15 @@ You are given a string stored in variable `problem`. Write code so that you prin
 var problem = "split this string into words and print them on separate lines"
 
 // Your code
+var problem = "split this string into words and print them on separate lines"
+
+for character in problem {
+if character == " " {
+print()
+continue
+}
+print(character, terminator: "")
+}
 ```
 
 Example
@@ -40,6 +49,23 @@ Given a string `testString` create a new variable called `condensedString` that 
 ```swift
 let testString = "  How   about      thesespaces  ?  "
 //condensedString = " How about thesespaces ? "
+
+let testString = "  How   about      thesespaces  ?  "
+var condensedString = ""
+var spaceCounter = 0
+
+for character in testString {
+if character == " " {
+spaceCounter += 1
+continue
+}
+condensedString += String(character)
+if spaceCounter >= 1 {
+//        I'm trying to do something her but I'm not sure what yet
+}
+}
+print(condensedString)
+
 ```
 
 
@@ -52,6 +78,20 @@ Example:
 Sample Input: `"Swift is the best language"`
 
 Sample Output: `"language best the is Swift"`
+
+```swift
+var givenInput = "Swift is the best language"
+var givenInputComp = givenInput.components(separatedBy: " ")
+var endResult = ""
+
+for word in givenInputComp {
+endResult = word + " " + endResult
+if givenInputComp.last == word {
+break
+}
+}
+print(endResult)
+```
 
 
 ## Question 4
